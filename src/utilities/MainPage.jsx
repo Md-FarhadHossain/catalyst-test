@@ -1,8 +1,13 @@
 import React from 'react'
+import Navbar from '../components/Navbar/Navbar'
+import { Outlet } from 'react-router-dom'
 
 const MainPage = () => {
   return (
-    <div>MainPage</div>
+    <div>
+      <Navbar />
+      <Outlet />
+    </div>
   )
 }
 

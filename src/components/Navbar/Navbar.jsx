@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <header>
-        <ul>
+      <header className="bg-gray-200">
+        <ul className="flex items-center">
           <li>
             <Link to="/">Pic Some</Link>
           </li>
