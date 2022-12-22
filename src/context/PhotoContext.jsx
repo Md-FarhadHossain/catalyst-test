@@ -13,8 +13,12 @@ const PhotoContext = ({children}) => {
         dispatch(getProducts())
     
     }, [])
+
+    const  toggleFavorite = (id) => {
+      console.log(`toggleFavorite is working ${id}`)
+    }
     
-    const propsValue = {products,loading}
+    const propsValue = {products,loading,toggleFavorite}
 
   return (
     <PhotoProvider.Provider value={propsValue}>

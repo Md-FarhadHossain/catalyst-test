@@ -13,9 +13,9 @@ const Photos = () => {
     }
 
   return (
-    <div>
+    <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 relative'>
         {
-            getProducts?.map(product => <Image key={product._id} image={product.image} />)
+            getProducts?.map(product => <Image className='relative' key={product._id} id={product._id} image={product.image} />)
         }
     </div>
   )
