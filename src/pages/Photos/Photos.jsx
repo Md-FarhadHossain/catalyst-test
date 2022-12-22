@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { PhotoProvider } from '../../context/PhotoContext'
+import Image from '../../components/Image/Image'
 
 const Photos = () => {
     const {products,loading} = useContext(PhotoProvider)
@@ -14,9 +15,7 @@ const Photos = () => {
   return (
     <div>
         {
-            getProducts?.map(product => <div>
-                 <img src={product.image} alt={product.name} />
-            </div>)
+            getProducts?.map(product => <Image key={product._id} image={product.image} />)
         }
     </div>
   )
