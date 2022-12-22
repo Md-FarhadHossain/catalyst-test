@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { RiHeartLine, RiShoppingCart2Line } from "react-icons/ri";
+import { RiHeartLine, RiShoppingCart2Line,RiHeartFill } from "react-icons/ri";
 import { PhotoProvider } from "../../context/PhotoContext";
 const Image = ({ image,id }) => {
   const [hovered, setHovered] = useState(false);
@@ -26,7 +26,7 @@ const Image = ({ image,id }) => {
         {hovered ? (
           <>
             <span className="absolute bottom-0 text-2xl">
-              <span className="cursor-pointer w-8 h-8 items-center flex justify-center hover:text-pink-500 hover:bg-[#ff4df340] rounded-full " onClick={() => handleHeartClick(id)}><RiHeartLine /></span>
+              {isFavorited ? <><span  className="cursor-pointer w-8 h-8 items-center flex justify-center text-pink-500 hover:bg-[#ff4df340] rounded-full " onClick={() => handleHeartClick(id)}><RiHeartFill /></span></> : <><span className="cursor-pointer w-8 h-8 items-center flex justify-center hover:text-pink-500 hover:bg-[#ff4df340] rounded-full " onClick={() => handleHeartClick(id)}><RiHeartLine /></span></>}
 
               <RiShoppingCart2Line />
             </span>
