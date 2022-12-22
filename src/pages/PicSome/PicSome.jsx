@@ -1,8 +1,11 @@
 import React from 'react'
+import Photos from '../Photos/Photos'
 
 const PicSome = () => {
   return (
-    <div>PicSome</div>
+    <>
+      <Photos />
+    </>
   )
 }
 

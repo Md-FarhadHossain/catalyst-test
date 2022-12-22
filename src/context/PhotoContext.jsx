@@ -14,7 +14,7 @@ const PhotoContext = ({children}) => {
     
     }, [])
     
-    const propsValue = {products}
+    const propsValue = {products,loading}
 
   return (
     <PhotoProvider.Provider value={propsValue}>

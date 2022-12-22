@@ -4,9 +4,10 @@ import axios from "axios";
 export const getProducts = createAsyncThunk(
   "products/getProducts",
   async () => {
-    return axios.get("http://localhost:5000/productDetails");
+    return await axios.get("http://localhost:5000/productDetails");
   }
 );
+
 
 const productSlice = createSlice({
   name: "products",
@@ -26,6 +27,9 @@ const productSlice = createSlice({
       state.loading = false;
     },
   },
+
+
 });
+
 
 export default productSlice.reducer;
