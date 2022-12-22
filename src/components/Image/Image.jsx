@@ -1,6 +1,9 @@
 import React, { useContext, useState } from "react";
 import { RiHeartLine, RiShoppingCart2Line,RiHeartFill } from "react-icons/ri";
 import { PhotoProvider } from "../../context/PhotoContext";
+import PropTypes from 'prop-types';
+
+
 const Image = ({ image,id }) => {
   const [hovered, setHovered] = useState(false);
   const [isFavorited, setIsFavorited] = useState(false)
@@ -39,5 +42,11 @@ const Image = ({ image,id }) => {
     </>
   );
 };
+
+Image.propTypes = {
+    className: PropTypes.string,
+    img: PropTypes.object
+}
+
 
 export default Image;

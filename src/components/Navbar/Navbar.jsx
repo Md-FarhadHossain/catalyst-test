@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div>
-      <header className="bg-gray-200">
-        <ul className="flex items-center">
+    <div className="bg-slate-200">
+      <header className="py-8 container mx-auto ">
+        <ul className="flex items-center text-xl gap-6 justify-center">
           <li>
             <Link to="/">Pic Some</Link>
           </li>
