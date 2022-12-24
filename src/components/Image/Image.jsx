@@ -1,13 +1,14 @@
 import React, { useContext, useState } from "react";
 import { RiHeartLine, RiShoppingCart2Line, RiHeartFill } from "react-icons/ri";
 import { AiOutlinePlusCircle } from "react-icons/ai";
-import { BsCartPlus,BsFillCartFill } from "react-icons/bs";
+import { BsCartPlus, BsFillCartFill } from "react-icons/bs";
 import PropTypes from "prop-types";
 import { PhotoProvider } from "../../context/PhotoContext";
 
 const Image = ({ img, product }) => {
   const [hovered, setHovered] = useState(false);
   const [isFavorited, setIsFavorited] = useState(false);
+  const [isCart, setIsCart] = useState(false);
   const { toggleFavorite } = useContext(PhotoProvider);
 
   const onMouseEnter = () => {
@@ -21,17 +22,15 @@ const Image = ({ img, product }) => {
   const handleHeartClick = (id) => {
     toggleFavorite(id);
     setIsFavorited(!isFavorited);
-    
   };
   console.log(isFavorited);
 
-
   // Handle cart click
   const handleCart = (img) => {
-    toggleFavorite(img)
-    console.log(img)
-    setIsFavorited(true)
-  }
+    toggleFavorite(img);
+    console.log(img);
+    setIsCart(!isCart);
+  };
 
   return (
     <>
@@ -59,9 +58,26 @@ const Image = ({ img, product }) => {
                 </>
               )}
 
-              {
-                isFavorited ?<><BsFillCartFill /> </>: <><span onClick={() => handleCart(img)} className="cursor-pointer w-8 h-8 items-center flex justify-center hover:text-green-600 hover:bg-green-200 rounded-full"><BsCartPlus /></span></> 
-              }
+              {isCart ? (
+                <>
+                  {" "}
+                  <span
+                    onClick={handleCart}
+                    className="cursor-pointer w-8 h-8 items-center flex justify-center hover:text-green-600 hover:bg-green-200 rounded-full"
+                  >
+                    <BsFillCartFill />
+                  </span>{" "}
+                </>
+              ) : (
+                <>
+                  <span
+                    onClick={() => handleCart(img)}
+                    className="cursor-pointer w-8 h-8 items-center flex justify-center hover:text-green-600 hover:bg-green-200 rounded-full"
+                  >
+                    <BsCartPlus />
+                  </span>
+                </>
+              )}
             </span>
           </>
         ) : (
