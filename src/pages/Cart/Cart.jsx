@@ -21,13 +21,18 @@ const Cart = () => {
     }, 3000);
     setTimeout();
   };
+   // Handle trash
+   const handleTrash = (imgIndex) => {
+    const newItem = cartItems.filter(((item, i) => i !== imgIndex))
+    setCartItems(newItem)
+  }
 
   return (
     <div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
-        {cartItems.map((item) => (
+        {cartItems.map((item, i) => (
           <div key={item.id}>
-            <img src={item.url} />
+            <img onClick={() => handleTrash(i)} src={item.url} />
           </div>
         ))}
       </div>

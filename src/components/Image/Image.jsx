@@ -33,6 +33,8 @@ const Image = ({ img, product }) => {
     setInCart(!inCart);
   };
 
+ 
+
   return (
     <>
       <div onMouseLeave={onMouseLeave} onMouseEnter={onMouseEnter}>
