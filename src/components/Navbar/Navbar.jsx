@@ -15,7 +15,7 @@ const Navbar = () => {
             <Link to="/">Pic Some</Link>
           </li>
           <li>
-            <Link to="/cart">{cartItems.length ? <><IoCartSharp /></> : <><IoCartOutline /></>} {cartItems.length}</Link>
+            <Link to="/cart">{cartItems.length ? <><IoCartSharp /></> : <><IoCartOutline /></>}</Link>
           </li>
         </ul>
       </header>
