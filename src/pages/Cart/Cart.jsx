@@ -14,6 +14,7 @@ const Cart = () => {
         </div>)
       }
       </div>
+      <h1 className="text-2xl">Total: {cartItems.length * 5.99}</h1>
     </div>
   )
 }
