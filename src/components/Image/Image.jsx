@@ -1,7 +1,9 @@
 import React, { useContext, useState } from "react";
 import { RiHeartLine, RiShoppingCart2Line, RiHeartFill } from "react-icons/ri";
-import { PhotoProvider } from "../../context/PhotoContext";
+import { AiOutlinePlusCircle } from "react-icons/ai";
+import { BsCartPlus,BsFillCartFill } from "react-icons/bs";
 import PropTypes from "prop-types";
+import { PhotoProvider } from "../../context/PhotoContext";
 
 const Image = ({ img, product }) => {
   const [hovered, setHovered] = useState(false);
@@ -28,6 +30,7 @@ const Image = ({ img, product }) => {
   const handleCart = (img) => {
     toggleFavorite(img)
     console.log(img)
+    setIsFavorited(true)
   }
 
   return (
@@ -56,7 +59,9 @@ const Image = ({ img, product }) => {
                 </>
               )}
 
-              <span onClick={() => handleCart(img)} className="cursor-pointer w-8 h-8 items-center flex justify-center hover:text-pink-500 hover:bg-[#ff4df340] rounded-full"><RiShoppingCart2Line /></span>
+              {
+                isFavorited ?<><BsFillCartFill /> </>: <><span onClick={() => handleCart(img)} className="cursor-pointer w-8 h-8 items-center flex justify-center hover:text-green-600 hover:bg-green-200 rounded-full"><BsCartPlus /></span></> 
+              }
             </span>
           </>
         ) : (
