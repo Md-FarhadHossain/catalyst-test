@@ -2,13 +2,14 @@ import React, { useContext, useState } from "react";
 import { RiHeartLine, RiShoppingCart2Line, RiHeartFill } from "react-icons/ri";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { BsCartPlus, BsFillCartFill } from "react-icons/bs";
+
 import PropTypes from "prop-types";
 import { PhotoProvider } from "../../context/PhotoContext";
 
 const Image = ({ img, product }) => {
   const [hovered, setHovered] = useState(false);
   const [isFavorited, setIsFavorited] = useState(false);
-  const [isCart, setIsCart] = useState(false);
+  const [inCart, setInCart] = useState(false);
   const { toggleFavorite } = useContext(PhotoProvider);
 
   const onMouseEnter = () => {
@@ -29,7 +30,7 @@ const Image = ({ img, product }) => {
   const handleCart = (img) => {
     toggleFavorite(img);
     console.log(img);
-    setIsCart(!isCart);
+    setInCart(!inCart);
   };
 
   return (
@@ -58,7 +59,7 @@ const Image = ({ img, product }) => {
                 </>
               )}
 
-              {isCart ? (
+              {inCart ? (
                 <>
                   {" "}
                   <span

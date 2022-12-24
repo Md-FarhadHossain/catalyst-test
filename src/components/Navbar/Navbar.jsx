@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { IoCartOutline,IoCartSharp } from "react-icons/io5";
+import { useContext } from "react";
+import { PhotoProvider } from "../../context/PhotoContext";
+
 
 const Navbar = () => {
+  const {cartItems} = useContext(PhotoProvider)
   return (
     <div className="bg-slate-200">
       <header className="py-8 container mx-auto ">
@@ -10,7 +15,7 @@ const Navbar = () => {
             <Link to="/">Pic Some</Link>
           </li>
           <li>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">{cartItems.length ? <><IoCartSharp /></> : <><IoCartOutline /></>} {cartItems.length}</Link>
           </li>
         </ul>
       </header>

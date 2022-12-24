@@ -29,7 +29,7 @@ const PhotoContext = ({children}) => {
 
     
     // Context provider value
-    const propsValue = {products,loading,toggleFavorite}
+    const propsValue = {products,loading,toggleFavorite,cartItems}
 
   return (
     <PhotoProvider.Provider value={propsValue}>
