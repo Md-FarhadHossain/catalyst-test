@@ -4,6 +4,9 @@ import { PhotoProvider } from '../../context/PhotoContext'
 const Cart = () => {
   const {cartItems} = useContext(PhotoProvider)
   console.log(cartItems)
+  const itemPrice =5.99
+  const usdPrice = itemPrice.toLocaleString("en-US", {style: "currency", currency:"USD"})
+  console.log(typeof usdPrice)
   return (
     <div>
       {cartItems.length}
@@ -14,7 +17,8 @@ const Cart = () => {
         </div>)
       }
       </div>
-      <h1 className="text-2xl">Total: {cartItems.length * 5.99}</h1>
+      <h1 className="text-2xl">Total: {usdPrice.replace('$', '') * cartItems.length}</h1>
+      
     </div>
   )
 }
