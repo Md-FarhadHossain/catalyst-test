@@ -5,7 +5,6 @@ import Image from '../../components/Image/Image'
 const Photos = () => {
     const {products,loading} = useContext(PhotoProvider)
 
-    console.log(products.data)
     const getProducts = products?.data
 
     if(loading){
@@ -18,9 +17,10 @@ const Photos = () => {
             getProducts?.map(product => {
               const img = {
                 url: product.image,
-                id: product._id
+                id: product._id,
+                name: product.name
               }
-              return (<Image className='relative' key={product._id} img={img} />)
+              return (<Image className='relative' key={product._id} img={img} product={product} />)
             })
         }
     </div>

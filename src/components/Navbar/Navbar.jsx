@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="bg-slate-200">
       <header className="py-8 container mx-auto ">
-        <ul className="flex items-center text-xl gap-6 justify-center">
+        <ul className="flex items-center text-xl gap-6 justify-center font-semibold">
           <li>
             <Link to="/">Pic Some</Link>
           </li>
