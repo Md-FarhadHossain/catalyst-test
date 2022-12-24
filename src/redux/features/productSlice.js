@@ -4,7 +4,7 @@ import axios from "axios";
 export const getProducts = createAsyncThunk(
   "products/getProducts",
   async () => {
-    return await axios.get("http://localhost:5000/productDetails");
+    return await axios.get("https://server-coral-one.vercel.app/productDetails");
   }
 );
 
