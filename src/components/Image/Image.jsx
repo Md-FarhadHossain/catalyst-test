@@ -21,7 +21,6 @@ const Image = ({ img, product }) => {
   console.log(hovered);
 
   const handleHeartClick = (id) => {
-    toggleFavorite(id);
     setIsFavorited(!isFavorited);
   };
   console.log(isFavorited);
